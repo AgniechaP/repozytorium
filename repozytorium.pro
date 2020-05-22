@@ -4,6 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        StateMachine.cpp \
         main.cpp
 INCLUDEPATH += "C:\SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit\SFML-2.5.1\include"
 LIBS += -L"C:\SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit\SFML-2.5.1\lib"
@@ -14,4 +15,5 @@ CONFIG(debug, debug|release){
 }
 
 HEADERS += \
-    State.hpp
+    State.hpp \
+    StateMachine.hpp
