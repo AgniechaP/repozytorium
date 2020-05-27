@@ -5,6 +5,8 @@ CONFIG -= qt
 
 SOURCES += \
         AssetManager.cpp \
+        FirstGame.cpp \
+        SplashState.cpp \
         StateMachine.cpp \
         inputmanager.cpp \
         main.cpp
@@ -18,6 +20,9 @@ CONFIG(debug, debug|release){
 
 HEADERS += \
     AssetManager.h \
+    Definitions.hpp \
+    FirstGame.h \
+    SplashState.h \
     State.hpp \
     StateMachine.hpp \
     inputmanager.h
