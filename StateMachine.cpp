@@ -1,4 +1,5 @@
 #include "StateMachine.hpp"
+namespace minigry {
 
 void StateMachine::AddState(StateRef newState, bool isReplacing) {
     this-> _isAdding = true;
@@ -40,4 +41,6 @@ void StateMachine::ProcessStateChanges() {
 
 StateRef &StateMachine::GetActiveState() {
     return this->_states.top();
+}
+
 }

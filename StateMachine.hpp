@@ -3,6 +3,7 @@
 #include<memory>
 #include<stack> //biblioteka do uzywania stosu
 #include "State.hpp"
+namespace minigry  {
 
 typedef std::unique_ptr<State> StateRef;
 class StateMachine {
@@ -26,4 +27,5 @@ private:
     bool _isReplacing; //zamieniamy
 };
 
+}
 #endif // STATEMACHINE_HPP

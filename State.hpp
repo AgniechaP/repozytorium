@@ -1,5 +1,7 @@
 #ifndef STATE_HPP
 #define STATE_HPP
+namespace minigry {
+
 
 class State {
 public:
@@ -11,5 +13,5 @@ public:
     virtual void Resume(){}
 
 };
-
+}
 #endif // STATE_HPP
