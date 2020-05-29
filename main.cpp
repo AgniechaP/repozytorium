@@ -4,5 +4,6 @@
 int main()
 {
     minigry::FirstGame(SCREEN_WIDTH,SCREEN_HEIGHT, "MINIGRY");
-    //return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
+
 }

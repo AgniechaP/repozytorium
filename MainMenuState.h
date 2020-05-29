@@ -1,5 +1,7 @@
-#ifndef SPLASHSTATE_H
-#define SPLASHSTATE_H
+#ifndef MAINMENUSTATE_H
+#define MAINMENUSTATE_H
+
+
 #include<SFML/Graphics.hpp>
 #include<SFML/Audio.hpp>
 #include "State.hpp"
@@ -7,9 +9,9 @@
 
 namespace minigry {
 
-class SplashState : public State {
+class MainMenuState : public State {
 public:
-    SplashState(GameFDataRef data);
+    MainMenuState(GameFDataRef data);
 
     void Init();
 
@@ -18,8 +20,8 @@ public:
     void Draw(float dt);
 private:
     GameFDataRef _data; //local reference
-    sf::Clock _clock;
-    sf::Texture _backgroundTexture;
+    sf::Sprite _title;
+    sf::Sprite _playKrowaButton;
     sf::Sprite _background;
 
     sf::SoundBuffer _splashSoundBuffer;
@@ -28,4 +30,5 @@ private:
 };
 
 }
-#endif // SPLASHSTATE_H
+
+#endif // MAINMENUSTATE_H
