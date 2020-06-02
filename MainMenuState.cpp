@@ -1,6 +1,7 @@
 #include "MainMenuState.h"
 #include<sstream>
 #include "Definitions.hpp"
+#include "FirstGameState.h"
 #include<iostream>
 
 namespace minigry{
@@ -25,7 +26,7 @@ void MainMenuState::HandleInput() {
             _data->window.close();
         }
         if(_data->input.IsSpriteClicked(_playKrowaButton, sf::Mouse::Left, _data->window)) {
-            std::cout<<"Idz do gry latajaca krowa"<<std::endl;
+            _data->machine.AddState(StateRef(new FirstGameState(_data)), true); //true - zamiana obecnego stanu
         }
     }
 

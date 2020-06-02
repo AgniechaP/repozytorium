@@ -6,6 +6,7 @@ CONFIG -= qt
 SOURCES += \
         AssetManager.cpp \
         FirstGame.cpp \
+        FirstGameState.cpp \
         MainMenuState.cpp \
         SplashState.cpp \
         StateMachine.cpp \
@@ -23,6 +24,7 @@ HEADERS += \
     AssetManager.h \
     Definitions.hpp \
     FirstGame.h \
+    FirstGameState.h \
     MainMenuState.h \
     SplashState.h \
     State.hpp \
