@@ -19,7 +19,7 @@ public:
 private:
     GameFDataRef _data; //local reference
     sf::Clock _clock;
-    sf::Texture _backgroundTexture;
+    //sf::Texture _backgroundTexture;
     sf::Sprite _background;
 
     sf::SoundBuffer _splashSoundBuffer;

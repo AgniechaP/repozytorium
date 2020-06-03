@@ -1,5 +1,5 @@
-#ifndef FIRSTGAMESTATE_H
-#define FIRSTGAMESTATE_H
+#ifndef GAMEOVERSTATE_H
+#define GAMEOVERSTATE_H
 
 
 #include<SFML/Graphics.hpp>
@@ -13,9 +13,9 @@
 
 namespace minigry {
 
-class FirstGameState : public State  {
+class GameOverState : public State  {
 public:
-    FirstGameState(GameFDataRef data);
+    GameOverState(GameFDataRef data);
 
     void Init();
     void HandleInput();
@@ -30,10 +30,8 @@ private:
     sf::SoundBuffer _splashSoundBuffer;
     sf::Sound _splashSound;
 
-    Cloud *cloud;
-
 };
 
 }
 
-#endif // FIRSTGAMESTATE_H
+#endif // GAMEOVERSTATE_H

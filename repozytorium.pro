@@ -8,6 +8,7 @@ SOURCES += \
         Cloud.cpp \
         FirstGame.cpp \
         FirstGameState.cpp \
+        GameOverstate.cpp \
         MainMenuState.cpp \
         SplashState.cpp \
         StateMachine.cpp \
@@ -27,6 +28,7 @@ HEADERS += \
     Definitions.hpp \
     FirstGame.h \
     FirstGameState.h \
+    GameOverstate.h \
     MainMenuState.h \
     SplashState.h \
     State.hpp \
