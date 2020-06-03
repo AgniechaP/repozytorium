@@ -34,7 +34,7 @@ void SplashState::Update(float dt) {
 }
 void SplashState::Draw(float dt) {
     _data->window.clear();
-    _data->window.draw(_background);
+    _data->window.draw(this->_background);
     _data->window.display();
 
 }

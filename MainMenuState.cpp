@@ -23,10 +23,10 @@ void MainMenuState::HandleInput() {
     sf::Event event;
     while(_data->window.pollEvent(event)) {
         if(sf::Event::Closed == event.type) {
-            _data->window.close();
+            this->_data->window.close();
         }
-        if(_data->input.IsSpriteClicked(_playKrowaButton, sf::Mouse::Left, _data->window)) {
-            _data->machine.AddState(StateRef(new FirstGameState(_data)), true); //true - zamiana obecnego stanu
+        if(this->_data->input.IsSpriteClicked(this->_playKrowaButton, sf::Mouse::Left, this->_data->window)) {
+            this->_data->machine.AddState(StateRef(new FirstGameState(_data)), true); //true - zamiana obecnego stanu
         }
     }
 

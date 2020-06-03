@@ -28,7 +28,8 @@ private:
     sf::Sound _splashSound;
 
 };
-
 }
-
 #endif // MAINMENUSTATE_H
+
+
+

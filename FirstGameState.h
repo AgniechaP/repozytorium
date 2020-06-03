@@ -7,17 +7,21 @@
 #include "State.hpp"
 #include "FirstGame.h"
 
+#include "Cloud.h"
+#include<vector>
+#include<sstream>
+
 namespace minigry {
 
-class FirstGameState : public State {
+class FirstGameState : public State  {
 public:
     FirstGameState(GameFDataRef data);
 
     void Init();
-
     void HandleInput();
     void Update(float dt);
     void Draw(float dt);
+
 private:
     GameFDataRef _data; //local reference
     sf::Texture _backgroundTexture;

@@ -1,5 +1,7 @@
 #include "FirstGame.h"
 #include "SplashState.h"
+#include<stdlib.h>
+#include<time.h>
 
 namespace minigry {
 FirstGame::FirstGame(int width, int height, std::string title) {

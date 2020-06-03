@@ -26,6 +26,5 @@ private:
     bool _isAdding; //dodajemy
     bool _isReplacing; //zamieniamy
 };
-
 }
 #endif // STATEMACHINE_HPP

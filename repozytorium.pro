@@ -5,6 +5,7 @@ CONFIG -= qt
 
 SOURCES += \
         AssetManager.cpp \
+        Cloud.cpp \
         FirstGame.cpp \
         FirstGameState.cpp \
         MainMenuState.cpp \
@@ -22,6 +23,7 @@ CONFIG(debug, debug|release){
 
 HEADERS += \
     AssetManager.h \
+    Cloud.h \
     Definitions.hpp \
     FirstGame.h \
     FirstGameState.h \
