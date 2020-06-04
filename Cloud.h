@@ -16,9 +16,12 @@ public:
     void SpawnInvisibleCloud();
     void MoveClouds(float dt);
     void DrawClouds();
+
+    void RandomizeCloudY();
 private:
     GameFDataRef _data;
     std::vector<sf::Sprite> cloudSprites;
+    int _CloudY;
 
 };
 

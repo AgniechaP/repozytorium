@@ -1,12 +1,14 @@
 #include "Cloud.h"
+#include <iostream>
 
 namespace minigry {
 Cloud::Cloud(GameFDataRef data) : _data(data) {
 
+    _CloudY = 0;
 }
 void Cloud::SpawnDownCloud() {
     sf::Sprite sprite(_data->assets.GetTexture("cloudup"));
-    sprite.setPosition(_data->window.getSize().x, _data->window.getSize().y - sprite.getGlobalBounds().height);
+    sprite.setPosition(_data->window.getSize().x, _data->window.getSize().y - sprite.getGlobalBounds().height - _CloudY);//rand()%830);
     cloudSprites.push_back(sprite);
 }
 void Cloud::SpawnUpCloud() {
@@ -23,17 +25,25 @@ void Cloud::SpawnInvisibleCloud() {
 }
 void Cloud::MoveClouds(float dt) {
      for(unsigned short int i=0; i<cloudSprites.size(); i++) {
-         sf::Vector2f position = cloudSprites.at(i).getPosition();
+         //sf::Vector2f position = cloudSprites.at(i).getPosition();
+         //if(cloudSprites.at(i).getPosition().x < 0 - cloudSprites.at(i).getGlobalBounds().width) {
+           //  cloudSprites.erase(cloudSprites.begin() + i);
+         //} else {
          float movement = CLOUD_SPEED*dt;
-
          cloudSprites.at(i).move(-movement, 0);
+         //}
      }
+
 }
 
 void Cloud::DrawClouds() {
     for(unsigned short int i=0; i<cloudSprites.size(); i++) {
         _data->window.draw(cloudSprites.at(i));
     }
+}
+
+void Cloud::RandomizeCloudY() {
+    _CloudY = rand()%700;
 }
 
 }

@@ -17,4 +17,13 @@
 #define CLOUD_UP_FILEPATH "cloudup.png"
 #define CLOUD_DOWN_FILEPATH "cloud.png"
 #define CLOUD_SPEED 200.0f
+#define CLOUD_FREQUENCY 3.0f
+#define COW_FILEPATH "cow.png"
+#define COW_STATE_STILL 1
+#define COW_STATE_FALLING 2
+#define COW_STATE_FLYING 3
+#define GRAVITY 350.0f
+#define COW_SPEED 350.0f
+#define FLYING_DURATION 0.25f
+
 #endif // DEFINITIONS_HPP

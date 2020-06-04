@@ -10,6 +10,7 @@
 #include "Cloud.h"
 #include<vector>
 #include<sstream>
+#include "Cow.h"
 
 namespace minigry {
 
@@ -26,11 +27,12 @@ private:
     GameFDataRef _data; //local reference
     //sf::Texture _backgroundTexture;
     sf::Sprite _background;
-
+    sf::Clock clock;
     sf::SoundBuffer _splashSoundBuffer;
     sf::Sound _splashSound;
 
     Cloud *cloud;
+    Cow *cow;
 
 };
 
