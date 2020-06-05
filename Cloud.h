@@ -18,6 +18,9 @@ public:
     void DrawClouds();
 
     void RandomizeCloudY();
+
+    const std::vector<sf::Sprite> &GetSprites() const;
+
 private:
     GameFDataRef _data;
     std::vector<sf::Sprite> cloudSprites;

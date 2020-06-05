@@ -18,7 +18,7 @@ void FirstGameState::Init() {
    cow = new Cow(_data);
    _background.setTexture(this->_data->assets.GetTexture("backgroundColorGrass"));
 
-
+   _gameState = GameStates::eReady;
 
 }
 void FirstGameState::HandleInput() {
@@ -30,14 +30,21 @@ void FirstGameState::HandleInput() {
         }
 
         if(this->_data->input.IsSpriteClicked(this->_background, sf::Mouse::Left, this->_data->window)) {
-            cow->Tap();
+            if(GameStates::eGameOver!=_gameState) {
+                _gameState = GameStates::ePlaying;
+                cow->Tap();
+            }
         }
 
     }
 
 }
 void FirstGameState::Update(float dt) {
-cloud->MoveClouds(dt);
+    if(GameStates::eGameOver!=_gameState) {
+//cloud->MoveClouds(dt);
+    }
+    if(GameStates::ePlaying == _gameState) {
+        cloud->MoveClouds(dt);
 if(clock.getElapsedTime().asSeconds() > CLOUD_FREQUENCY) {
     cloud->RandomizeCloudY();
     cloud->SpawnInvisibleCloud();
@@ -47,6 +54,15 @@ if(clock.getElapsedTime().asSeconds() > CLOUD_FREQUENCY) {
     clock.restart();
 }
 cow->Update(dt);
+
+std::vector<sf::Sprite> cloudSprites = cloud->GetSprites();
+for(int i =0; i<cloudSprites.size(); i++) {
+    if(collision.CheckSpriteCollision(cow->GetSprite(), 0.425f, cloudSprites.at(i), 1.0f)) {
+        _gameState = GameStates::eGameOver;
+    }
+
+    }
+}
 }
 void FirstGameState::Draw(float dt) {
     _data->window.clear();

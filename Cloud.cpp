@@ -46,4 +46,8 @@ void Cloud::RandomizeCloudY() {
     _CloudY = rand()%700;
 }
 
+const std::vector<sf::Sprite> &Cloud::GetSprites() const {
+    return cloudSprites;
+}
+
 }

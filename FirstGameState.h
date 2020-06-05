@@ -11,6 +11,7 @@
 #include<vector>
 #include<sstream>
 #include "Cow.h"
+#include "Collision.h"
 
 namespace minigry {
 
@@ -33,6 +34,9 @@ private:
 
     Cloud *cloud;
     Cow *cow;
+
+    Collision collision;
+    int _gameState;
 
 };
 

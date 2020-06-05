@@ -28,4 +28,7 @@ void Cow::Tap() {
     _movementClock.restart();
     _CowState = COW_STATE_FLYING;
 }
+const sf::Sprite &Cow::GetSprite() const {
+    return _cowSprite;
+}
 }

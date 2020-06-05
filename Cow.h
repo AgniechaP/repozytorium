@@ -14,6 +14,8 @@ public:
     void Draw();
     void Update(float dt);
     void Tap();
+
+    const sf::Sprite &GetSprite() const;
 private:
     GameFDataRef _data;
     sf::Sprite _cowSprite;

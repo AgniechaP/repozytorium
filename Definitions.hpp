@@ -26,4 +26,9 @@
 #define COW_SPEED 350.0f
 #define FLYING_DURATION 0.25f
 
+enum GameStates {
+  eReady,
+  ePlaying,
+  eGameOver
+};
 #endif // DEFINITIONS_HPP

@@ -6,6 +6,7 @@ CONFIG -= qt
 SOURCES += \
         AssetManager.cpp \
         Cloud.cpp \
+        Collision.cpp \
         Cow.cpp \
         FirstGame.cpp \
         FirstGameState.cpp \
@@ -26,6 +27,7 @@ CONFIG(debug, debug|release){
 HEADERS += \
     AssetManager.h \
     Cloud.h \
+    Collision.h \
     Cow.h \
     Definitions.hpp \
     FirstGame.h \
