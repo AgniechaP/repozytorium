@@ -14,16 +14,19 @@ public:
     void SpawnDownCloud();
     void SpawnUpCloud();
     void SpawnInvisibleCloud();
+    void Scoring();
     void MoveClouds(float dt);
     void DrawClouds();
 
     void RandomizeCloudY();
 
     const std::vector<sf::Sprite> &GetSprites() const;
+    std::vector<sf::Sprite> &GetScoringSprite();
 
 private:
     GameFDataRef _data;
     std::vector<sf::Sprite> cloudSprites;
+    std::vector<sf::Sprite> scoringClouds;
     int _CloudY;
 
 };

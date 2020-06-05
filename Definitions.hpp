@@ -25,7 +25,7 @@
 #define GRAVITY 350.0f
 #define COW_SPEED 350.0f
 #define FLYING_DURATION 0.25f
-
+#define SCORING_CLOUD_FILEPATH "InvisibleScoringCloud.png"
 enum GameStates {
   eReady,
   ePlaying,
@@ -33,4 +33,5 @@ enum GameStates {
 };
 
 #define WHITE_SPPED 1500.0f
+
 #endif // DEFINITIONS_HPP

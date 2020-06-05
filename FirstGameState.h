@@ -39,6 +39,7 @@ private:
     Collision collision;
     White *white;
     int _gameState;
+    int _score;
 
 
 

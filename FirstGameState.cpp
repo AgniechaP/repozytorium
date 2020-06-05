@@ -14,11 +14,13 @@ void FirstGameState::Init() {
    _data->assets.LoadTexture("cloudup", CLOUD_UP_FILEPATH);
    _data->assets.LoadTexture("cloud",CLOUD_DOWN_FILEPATH);
    _data->assets.LoadTexture("cow",COW_FILEPATH);
+   _data->assets.LoadTexture("InvisibleScoringCloud", SCORING_CLOUD_FILEPATH);
    cloud = new Cloud(_data);
    cow = new Cow(_data);
    white = new White(_data);
    _background.setTexture(this->_data->assets.GetTexture("backgroundColorGrass"));
 
+   _score = 0;
    _gameState = GameStates::eReady;
 
 }
@@ -51,6 +53,7 @@ if(clock.getElapsedTime().asSeconds() > CLOUD_FREQUENCY) {
     cloud->SpawnInvisibleCloud();
     cloud->SpawnDownCloud();
     cloud->SpawnUpCloud();
+    cloud->Scoring();
 
     clock.restart();
 }
@@ -63,6 +66,17 @@ for(int i =0; i<cloudSprites.size(); i++) {
     }
 
     }
+if(GameStates::ePlaying == _gameState) {
+std::vector<sf::Sprite> &scoringSprites = cloud->GetScoringSprite();
+for(int i =0; i< scoringSprites.size(); i++) {
+    if(collision.CheckSpriteCollision(cow->GetSprite(), 0.325f, scoringSprites.at(i), 0.90f)) {
+        _score++;
+        std::cout<<_score<<std::endl;
+        scoringSprites.erase(scoringSprites.begin() + i);
+    }
+
+    }
+}
 }
     if(GameStates::eGameOver == _gameState) {
         white->Show(dt);
