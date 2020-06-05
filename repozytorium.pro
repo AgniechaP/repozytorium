@@ -14,6 +14,7 @@ SOURCES += \
         MainMenuState.cpp \
         SplashState.cpp \
         StateMachine.cpp \
+        White.cpp \
         inputmanager.cpp \
         main.cpp
 INCLUDEPATH += "C:\SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit\SFML-2.5.1\include"
@@ -37,4 +38,5 @@ HEADERS += \
     SplashState.h \
     State.hpp \
     StateMachine.hpp \
+    White.h \
     inputmanager.h

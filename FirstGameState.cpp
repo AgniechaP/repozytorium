@@ -16,6 +16,7 @@ void FirstGameState::Init() {
    _data->assets.LoadTexture("cow",COW_FILEPATH);
    cloud = new Cloud(_data);
    cow = new Cow(_data);
+   white = new White(_data);
    _background.setTexture(this->_data->assets.GetTexture("backgroundColorGrass"));
 
    _gameState = GameStates::eReady;
@@ -57,18 +58,22 @@ cow->Update(dt);
 
 std::vector<sf::Sprite> cloudSprites = cloud->GetSprites();
 for(int i =0; i<cloudSprites.size(); i++) {
-    if(collision.CheckSpriteCollision(cow->GetSprite(), 0.425f, cloudSprites.at(i), 1.0f)) {
+    if(collision.CheckSpriteCollision(cow->GetSprite(), 0.325f, cloudSprites.at(i), 0.90f)) {
         _gameState = GameStates::eGameOver;
     }
 
     }
 }
+    if(GameStates::eGameOver == _gameState) {
+        white->Show(dt);
+    }
 }
 void FirstGameState::Draw(float dt) {
     _data->window.clear();
     _data->window.draw(_background);
     cloud->DrawClouds();
     cow->Draw();
+    white->Draw();
 
     _data->window.display();
 

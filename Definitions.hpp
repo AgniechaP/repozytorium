@@ -31,4 +31,6 @@ enum GameStates {
   ePlaying,
   eGameOver
 };
+
+#define WHITE_SPPED 1500.0f
 #endif // DEFINITIONS_HPP

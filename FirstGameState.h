@@ -13,6 +13,7 @@
 #include "Cow.h"
 #include "Collision.h"
 
+#include "White.h"
 namespace minigry {
 
 class FirstGameState : public State  {
@@ -36,7 +37,10 @@ private:
     Cow *cow;
 
     Collision collision;
+    White *white;
     int _gameState;
+
+
 
 };
 
