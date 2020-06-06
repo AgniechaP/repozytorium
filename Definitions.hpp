@@ -33,5 +33,5 @@ enum GameStates {
 };
 
 #define WHITE_SPPED 1500.0f
-
+#define FONT_FILEPATH "arial.ttf"
 #endif // DEFINITIONS_HPP

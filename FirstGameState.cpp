@@ -15,12 +15,16 @@ void FirstGameState::Init() {
    _data->assets.LoadTexture("cloud",CLOUD_DOWN_FILEPATH);
    _data->assets.LoadTexture("cow",COW_FILEPATH);
    _data->assets.LoadTexture("InvisibleScoringCloud", SCORING_CLOUD_FILEPATH);
+   _data->assets.LoadFont("arial", FONT_FILEPATH);
+
    cloud = new Cloud(_data);
    cow = new Cow(_data);
    white = new White(_data);
+   score = new Score(_data);
    _background.setTexture(this->_data->assets.GetTexture("backgroundColorGrass"));
 
    _score = 0;
+   score->UpdateScore(_score);
    _gameState = GameStates::eReady;
 
 }
@@ -71,7 +75,7 @@ std::vector<sf::Sprite> &scoringSprites = cloud->GetScoringSprite();
 for(int i =0; i< scoringSprites.size(); i++) {
     if(collision.CheckSpriteCollision(cow->GetSprite(), 0.325f, scoringSprites.at(i), 0.90f)) {
         _score++;
-        std::cout<<_score<<std::endl;
+        score->UpdateScore(_score);
         scoringSprites.erase(scoringSprites.begin() + i);
     }
 
@@ -88,6 +92,7 @@ void FirstGameState::Draw(float dt) {
     cloud->DrawClouds();
     cow->Draw();
     white->Draw();
+    score->Draw();
 
     _data->window.display();
 
