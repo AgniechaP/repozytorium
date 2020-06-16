@@ -6,6 +6,7 @@
 #include<SFML/Audio.hpp>
 #include "State.hpp"
 #include "FirstGame.h"
+#include "FirstGameState.h"
 
 #include "Cloud.h"
 #include<vector>
@@ -15,7 +16,7 @@ namespace minigry {
 
 class GameOverState : public State  {
 public:
-    GameOverState(GameFDataRef data);
+    GameOverState(GameFDataRef data, int score);
 
     void Init();
     void HandleInput();
@@ -32,7 +33,10 @@ private:
 
     sf::Sprite _gameOver_Pic;
     sf::Sprite _try_again_button;
-    //sf::Sprite _gameOverBody;
+
+    sf::Text _scoreGameOverText;
+
+    int _scoreGameOver;
 
 };
 

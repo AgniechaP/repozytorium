@@ -94,7 +94,7 @@ for(unsigned int i =0; i< scoringSprites.size(); i++) {
     if(GameStates::eGameOver == _gameState) {
         white->Show(dt);
         if(clock.getElapsedTime().asSeconds() > TIME_TO_GAMEOVER) {
-            _data->machine.AddState(StateRef(new GameOverState(_data)), true);
+            _data->machine.AddState(StateRef(new GameOverState(_data, _score)), true);
         }
     }
 }
