@@ -14,6 +14,7 @@
 //LATAJACA KROWA GRA
 #define KROWA_BACKGROUND_FILEPATH "backgroundColorGrass.png"
 #define GAME_OVER_BACKGROUND_FILEPATH "backgroundForest.png"
+#define GAME_OVER_TITLE "game_over_title.png"
 #define CLOUD_UP_FILEPATH "cloudup.png"
 #define CLOUD_DOWN_FILEPATH "cloud.png"
 #define CLOUD_SPEED 200.0f
@@ -34,4 +35,5 @@ enum GameStates {
 
 #define WHITE_SPPED 1500.0f
 #define FONT_FILEPATH "arial.ttf"
+#define TIME_TO_GAMEOVER 1.5f
 #endif // DEFINITIONS_HPP

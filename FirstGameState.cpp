@@ -1,6 +1,7 @@
 #include "FirstGameState.h"
 #include<sstream>
 #include "Definitions.hpp"
+#include "GameOverstate.h"
 #include<iostream>
 
 
@@ -42,6 +43,12 @@ void FirstGameState::HandleInput() {
                 cow->Tap();
             }
         }
+        else if(sf::Event::KeyPressed == event.type) {
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+            _gameState = GameStates::ePlaying;
+            cow->Tap();
+            }
+        }
 
     }
 
@@ -64,15 +71,17 @@ if(clock.getElapsedTime().asSeconds() > CLOUD_FREQUENCY) {
 cow->Update(dt);
 
 std::vector<sf::Sprite> cloudSprites = cloud->GetSprites();
-for(int i =0; i<cloudSprites.size(); i++) {
+for(unsigned int i =0; i<cloudSprites.size(); i++) {
     if(collision.CheckSpriteCollision(cow->GetSprite(), 0.325f, cloudSprites.at(i), 0.90f)) {
         _gameState = GameStates::eGameOver;
+
+        clock.restart();
     }
 
     }
 if(GameStates::ePlaying == _gameState) {
 std::vector<sf::Sprite> &scoringSprites = cloud->GetScoringSprite();
-for(int i =0; i< scoringSprites.size(); i++) {
+for(unsigned int i =0; i< scoringSprites.size(); i++) {
     if(collision.CheckSpriteCollision(cow->GetSprite(), 0.325f, scoringSprites.at(i), 0.90f)) {
         _score++;
         score->UpdateScore(_score);
@@ -84,6 +93,9 @@ for(int i =0; i< scoringSprites.size(); i++) {
 }
     if(GameStates::eGameOver == _gameState) {
         white->Show(dt);
+        if(clock.getElapsedTime().asSeconds() > TIME_TO_GAMEOVER) {
+            _data->machine.AddState(StateRef(new GameOverState(_data)), true);
+        }
     }
 }
 void FirstGameState::Draw(float dt) {

@@ -30,6 +30,10 @@ private:
     sf::SoundBuffer _splashSoundBuffer;
     sf::Sound _splashSound;
 
+    sf::Sprite _gameOver_Pic;
+    sf::Sprite _try_again_button;
+    //sf::Sprite _gameOverBody;
+
 };
 
 }
