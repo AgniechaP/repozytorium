@@ -11,6 +11,8 @@
 #define MAIN_MENU_BACKGROUND_FILEPATH "backgroundForest.png"
 #define GAME_TITLE_FILEPATH "zwierzakowo.png"
 #define LATAJACA_KROWA_BUTTON_FILEPATH "latajaca_krowa.png"
+#define INSTRUKCJA_BUTTON_FILEPATH "instrukcja_button.png"
+#define INSTRUCTION_BACKGROUND_FILEPATH "backgroundForest.png"
 //LATAJACA KROWA GRA
 #define KROWA_BACKGROUND_FILEPATH "backgroundColorGrass.png"
 #define GAME_OVER_BACKGROUND_FILEPATH "backgroundForest.png"
@@ -35,5 +37,5 @@ enum GameStates {
 
 #define WHITE_SPPED 1500.0f
 #define FONT_FILEPATH "arial.ttf"
-#define TIME_TO_GAMEOVER 1.5f
+#define TIME_TO_GAMEOVER 1.3f
 #endif // DEFINITIONS_HPP

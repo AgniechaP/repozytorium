@@ -10,7 +10,7 @@ FirstGameState::FirstGameState(GameFDataRef data) : _data(data) {
 
 }
 void FirstGameState::Init() {
-    //std::cout<<"First game!"<<std::endl;
+
    _data->assets.LoadTexture("backgroundColorGrass", KROWA_BACKGROUND_FILEPATH );
    _data->assets.LoadTexture("cloudup", CLOUD_UP_FILEPATH);
    _data->assets.LoadTexture("cloud",CLOUD_DOWN_FILEPATH);

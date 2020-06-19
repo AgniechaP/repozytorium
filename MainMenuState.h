@@ -22,6 +22,7 @@ private:
     GameFDataRef _data; //local reference
     sf::Sprite _title;
     sf::Sprite _playKrowaButton;
+    sf::Sprite _instrukcjaButton;
     sf::Sprite _background;
 
     sf::SoundBuffer _splashSoundBuffer;

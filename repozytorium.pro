@@ -11,6 +11,7 @@ SOURCES += \
         FirstGame.cpp \
         FirstGameState.cpp \
         GameOverstate.cpp \
+        InstructionState.cpp \
         MainMenuState.cpp \
         Score.cpp \
         SplashState.cpp \
@@ -35,6 +36,7 @@ HEADERS += \
     FirstGame.h \
     FirstGameState.h \
     GameOverstate.h \
+    InstructionState.h \
     MainMenuState.h \
     Score.h \
     SplashState.h \
