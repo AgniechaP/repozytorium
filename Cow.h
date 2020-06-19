@@ -15,6 +15,9 @@ public:
     void Update(float dt);
     void Tap();
 
+    void BackToPreviousPosition();
+    void Rotate(const float &angle);
+
     const sf::Sprite &GetSprite() const;
 private:
     GameFDataRef _data;

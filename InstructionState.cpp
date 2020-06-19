@@ -33,12 +33,27 @@ _sterowanieText.setFillColor(sf::Color::Black);
 _sterowanieText.setOrigin(_instructionText.getGlobalBounds().width/2, _instructionText.getGlobalBounds().height/2);
 _sterowanieText.setPosition(190,330);
 
+_obrotText.setFont(_data->assets.GetFont("arial"));
+_obrotText.setString(std::string("Klawiszem R obracaj krowiszczem"));
+_obrotText.setCharacterSize(25);
+_obrotText.setFillColor(sf::Color::Black);
+_obrotText.setOrigin(_instructionText.getGlobalBounds().width/2, _instructionText.getGlobalBounds().height/2);
+_obrotText.setPosition(190,430);
+
 _celText.setFont(_data->assets.GetFont("arial"));
 _celText.setString(std::string("Cel gry: omin jak najwiecej chmur!"));
 _celText.setCharacterSize(25);
 _celText.setFillColor(sf::Color::Black);
 _celText.setOrigin(_instructionText.getGlobalBounds().width/2, _instructionText.getGlobalBounds().height/2);
-_celText.setPosition(190,400);
+_celText.setPosition(190,530);
+
+
+_ostrzezenie.setFont(_data->assets.GetFont("arial"));
+_ostrzezenie.setString(std::string("Nie pozwol spasc krowie!!"));
+_ostrzezenie.setCharacterSize(25);
+_ostrzezenie.setFillColor(sf::Color::Black);
+_ostrzezenie.setOrigin(_instructionText.getGlobalBounds().width/2, _instructionText.getGlobalBounds().height/2);
+_ostrzezenie.setPosition(190,630);
 }
 void InstructionState::HandleInput() {
     sf::Event event;
@@ -63,7 +78,9 @@ void InstructionState::Draw(float dt) {
     _data->window.draw(_latajaca_krowa_po_instrukcji);
     _data->window.draw(_instructionText);
     _data->window.draw(_sterowanieText);
+    _data->window.draw(_obrotText);
     _data->window.draw(_celText);
+    _data->window.draw(_ostrzezenie);
     _data->window.display();
  }
 

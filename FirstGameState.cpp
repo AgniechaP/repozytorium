@@ -5,6 +5,7 @@
 #include<iostream>
 
 
+
 namespace minigry {
 FirstGameState::FirstGameState(GameFDataRef data) : _data(data) {
 
@@ -41,18 +42,34 @@ void FirstGameState::HandleInput() {
             if(GameStates::eGameOver!=_gameState) {
                 _gameState = GameStates::ePlaying;
                 cow->Tap();
+
             }
         }
         else if(sf::Event::KeyPressed == event.type) {
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
             _gameState = GameStates::ePlaying;
             cow->Tap();
+            cow->BackToPreviousPosition();
+
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+                _gameState = GameStates::ePlaying;
+                cow->Rotate(180.0);
+
             }
         }
 
-    }
+
+        /*if(sf::Event::KeyPressed == event.type) {
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+               cow->Rotate();
+
+            }
+        }*/
+    }   
 
 }
+
 void FirstGameState::Update(float dt) {
     if(GameStates::eGameOver!=_gameState) {
 //cloud->MoveClouds(dt);
@@ -79,6 +96,8 @@ for(unsigned int i =0; i<cloudSprites.size(); i++) {
     }
 
     }
+//cow->BackToPreviousPosition();
+
 if(GameStates::ePlaying == _gameState) {
 std::vector<sf::Sprite> &scoringSprites = cloud->GetScoringSprite();
 for(unsigned int i =0; i< scoringSprites.size(); i++) {
@@ -89,6 +108,7 @@ for(unsigned int i =0; i< scoringSprites.size(); i++) {
     }
 
     }
+
 }
 }
     if(GameStates::eGameOver == _gameState) {
@@ -98,6 +118,8 @@ for(unsigned int i =0; i< scoringSprites.size(); i++) {
         }
     }
 }
+
+
 void FirstGameState::Draw(float dt) {
     _data->window.clear();
     _data->window.draw(_background);

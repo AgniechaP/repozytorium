@@ -25,6 +25,8 @@ private:
     sf::Text _instructionText;
     sf::Text _sterowanieText;
     sf::Text _celText;
+    sf::Text _ostrzezenie;
+    sf::Text _obrotText;
     sf::Sprite _latajaca_krowa_po_instrukcji;
 };
 }

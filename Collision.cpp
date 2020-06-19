@@ -31,4 +31,5 @@ bool Collision::CheckSpriteCollision(sf::Sprite sprite1, float scale1, sf::Sprit
     }
 
 }
+
 }
