@@ -43,6 +43,7 @@ void FirstGameState::HandleInput() {
             if(GameStates::eGameOver!=_gameState) {
                 _gameState = GameStates::ePlaying;
                 cow->Tap();
+                cow->BackToPreviousPosition();
 
             }
         }
