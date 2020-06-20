@@ -18,6 +18,7 @@ void FirstGameState::Init() {
    _data->assets.LoadTexture("cow",COW_FILEPATH);
    _data->assets.LoadTexture("InvisibleScoringCloud", SCORING_CLOUD_FILEPATH);
    _data->assets.LoadFont("arial", FONT_FILEPATH);
+   _data->assets.LoadTexture("pig", PIG_FILEPATH);
 
    cloud = new Cloud(_data);
    cow = new Cow(_data);
@@ -83,9 +84,13 @@ if(clock.getElapsedTime().asSeconds() > CLOUD_FREQUENCY) {
     cloud->SpawnUpCloud();
     cloud->Scoring();
 
+    cloud->SpawnPigCloud();
+
+
     clock.restart();
 }
 cow->Update(dt);
+
 
 std::vector<sf::Sprite> cloudSprites = cloud->GetSprites();
 for(unsigned int i =0; i<cloudSprites.size(); i++) {
@@ -108,6 +113,15 @@ for(unsigned int i =0; i< scoringSprites.size(); i++) {
     }
 
     }
+std::vector<sf::Sprite> &scoringPigSprites = cloud->GetScoringPigSprites();
+for(unsigned short int i =0; i<scoringPigSprites.size(); i++) {
+    if(collision.CheckSpriteCollision(cow->GetSprite(), 0.325f, scoringPigSprites.at(i), 0.90f)) {
+        _score+=2;
+        score->UpdateScore(_score);
+        scoringPigSprites.erase(scoringPigSprites.begin() + i);
+    }
+
+}
 
 }
 }

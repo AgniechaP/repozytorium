@@ -38,22 +38,29 @@ _obrotText.setString(std::string("Klawiszem R obracaj krowiszczem"));
 _obrotText.setCharacterSize(25);
 _obrotText.setFillColor(sf::Color::Black);
 _obrotText.setOrigin(_instructionText.getGlobalBounds().width/2, _instructionText.getGlobalBounds().height/2);
-_obrotText.setPosition(190,430);
+_obrotText.setPosition(190,400);
+
+_zderzenie_ze_swinia.setFont(_data->assets.GetFont("arial"));
+_zderzenie_ze_swinia.setString(std::string("Uderz prosiaka i otrzymaj +2 punkty!"));
+_zderzenie_ze_swinia.setCharacterSize(25);
+_zderzenie_ze_swinia.setFillColor(sf::Color::Black);
+_zderzenie_ze_swinia.setOrigin(_instructionText.getGlobalBounds().width/2, _instructionText.getGlobalBounds().height/2);
+_zderzenie_ze_swinia.setPosition(190,470);
 
 _celText.setFont(_data->assets.GetFont("arial"));
 _celText.setString(std::string("Cel gry: omin jak najwiecej chmur!"));
 _celText.setCharacterSize(25);
 _celText.setFillColor(sf::Color::Black);
 _celText.setOrigin(_instructionText.getGlobalBounds().width/2, _instructionText.getGlobalBounds().height/2);
-_celText.setPosition(190,530);
+_celText.setPosition(190,540);
 
 
 _ostrzezenie.setFont(_data->assets.GetFont("arial"));
-_ostrzezenie.setString(std::string("Nie pozwol spasc krowie!!"));
-_ostrzezenie.setCharacterSize(25);
+_ostrzezenie.setString(std::string("Nie pozwol spasc krowie!! Zderzenie z chmura konczy gre"));
+_ostrzezenie.setCharacterSize(23);
 _ostrzezenie.setFillColor(sf::Color::Black);
 _ostrzezenie.setOrigin(_instructionText.getGlobalBounds().width/2, _instructionText.getGlobalBounds().height/2);
-_ostrzezenie.setPosition(190,630);
+_ostrzezenie.setPosition(190,610);
 }
 void InstructionState::HandleInput() {
     sf::Event event;
@@ -81,6 +88,7 @@ void InstructionState::Draw(float dt) {
     _data->window.draw(_obrotText);
     _data->window.draw(_celText);
     _data->window.draw(_ostrzezenie);
+    _data->window.draw(_zderzenie_ze_swinia);
     _data->window.display();
  }
 

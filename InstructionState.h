@@ -27,6 +27,7 @@ private:
     sf::Text _celText;
     sf::Text _ostrzezenie;
     sf::Text _obrotText;
+    sf::Text _zderzenie_ze_swinia;
     sf::Sprite _latajaca_krowa_po_instrukcji;
 };
 }

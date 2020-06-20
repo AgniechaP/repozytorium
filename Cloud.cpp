@@ -23,6 +23,16 @@ void Cloud::SpawnInvisibleCloud() {
     cloudSprites.push_back(sprite);
 
 }
+
+void Cloud::SpawnPigCloud() {
+    sf::Sprite sprite(_data->assets.GetTexture("pig"));
+    sprite.setPosition(rand()%600+20, rand()%800+1); //_data->window.getSize().x
+    sprite.setScale(0.40, 0.40);
+    pigScoringClouds.push_back(sprite);
+
+}
+
+
 void Cloud::Scoring() {
     sf::Sprite sprite(_data->assets.GetTexture("InvisibleScoringCloud"));//("cloudup"));
     sprite.setPosition(_data->window.getSize().x, 0);//_data->window.getSize().y - sprite.getGlobalBounds().height);
@@ -48,6 +58,11 @@ void Cloud::MoveClouds(float dt) {
          scoringClouds.at(i).move(-movement, 0);
        //  }
      }
+
+     for(unsigned short int i=0; i<pigScoringClouds.size(); i++) {
+         float movement = CLOUD_SPEED*dt;
+         pigScoringClouds.at(i).move(-movement, 0);
+     }
 }
 
 
@@ -55,6 +70,11 @@ void Cloud::DrawClouds() {
     for(unsigned short int i=0; i<cloudSprites.size(); i++) {
         _data->window.draw(cloudSprites.at(i));
     }
+
+    for(unsigned short int i=0; i<pigScoringClouds.size(); i++) {
+        _data->window.draw(pigScoringClouds.at(i));
+    }
+
 }
 
 void Cloud::RandomizeCloudY() {
@@ -63,8 +83,15 @@ void Cloud::RandomizeCloudY() {
 
 const std::vector<sf::Sprite> &Cloud::GetSprites() const {
     return cloudSprites;
+
+
 }
 std::vector<sf::Sprite> &Cloud::GetScoringSprite() {
     return scoringClouds;
+
+}
+
+std::vector<sf::Sprite> &Cloud::GetScoringPigSprites() {
+    return pigScoringClouds;
 }
 }
